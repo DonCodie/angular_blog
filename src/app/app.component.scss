@@ -22,7 +22,19 @@
 
     &-deco {
       border-radius: 5px;
-      background-color: lightgrey;
+      border: 1px solid lightgrey;
+
+      &_white {
+        background-color: #f3f3f3;
+      }
+
+      &_green {
+        background-color: #ace8ac;
+      }
+
+      &_red {
+        background-color: #fdb3b3;
+      }
     }
 
     &__div {
@@ -81,7 +93,7 @@ button {
     width: 100px;
     height: 40px;
     margin-right: 5px;
-    border-style: inherit;
+    border-style: none;
     border-radius: 5px;
     color: white;
 
@@ -90,12 +102,13 @@ button {
     }
 
     &:focus {
-      outline:none;
+      outline: none;
     }
   }
 
   &.btn-green {
     background-color: #28a745;
+
     &:hover {
       background-color: #218838;
     }
@@ -103,6 +116,7 @@ button {
 
   &.btn-red {
     background-color: #dc3545;
+
     &:hover {
       background-color: #c82333;
     }

@@ -1,27 +1,30 @@
 <div class="container container_pos">
   <h1 class="container__maintitle">{{ title | titlecase }}</h1>
-  <div class="container__post
-              container__post-pos
-              container__post-deco">
+  <div *ngFor="let post of posts"
+    [ngClass]="{'container__post': true,
+              'container__post-pos': true,
+              'container__post-deco': true,
+              'container__post-deco_white': post.loveIts == 0,
+              'container__post-deco_green': post.loveIts >= 1,
+              'container__post-deco_red': post.loveIts <= -1}">
     <div class="container__post__div
                 container__post__div_pos
                 container__post__div_deco">
       <div class="container__post__div__post-title
                   container__post__div__post-title_pos
                   container__post__div__post-title_deco">
-        Mon premier post
+        {{ post.title }}
       </div>
       <div class="container__post__div__post-date
                   container__post__div__post-date_pos
                   container__post__div__post-date_deco">
-        10/24/2017, 11:00 AM
+        {{ post.created_at | date :'short' }}
       </div>
     </div>
     <p class="container__post__para container__post__para_deco">
-      Novitates autem si spem adferunt, ut tamquam in herbis non fallacibus fructus appareat, non sunt
-      illae quidem repudiandae, vetustas tamen suo loco conservanda.
+      {{ post.content }}
     </p>
-    <button type="submit" class="btn-default btn-green">Love it !</button>
-    <button type="submit" class="btn-default btn-red">Don't love it !</button>
+    <button type="submit" class="btn-default btn-green" (click)="onOpinionLove()">Love it !</button>
+    <button type="submit" class="btn-default btn-red" (click)="onOpinionNotlove()">Don't love it !</button>
   </div>
 </div>
