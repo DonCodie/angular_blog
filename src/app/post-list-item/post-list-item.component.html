@@ -1,0 +1,30 @@
+<div [ngClass]="{'post': true,
+                 'post-pos': true,
+                 'post-deco': true,
+                 'post-deco_white': post.loveIts === 0,
+                 'post-deco_green': post.loveIts >= 1,
+                 'post-deco_red': post.loveIts <= -1}">
+  <div class="post__div
+              post__div_pos
+              post__div_deco">
+    <div class="post__div__post-title
+                post__div__post-title_pos
+                post__div__post-title_deco">
+      {{ post.title }}
+    </div>
+    <div class="post__div__post-date
+                post__div__post-date_pos
+                post__div__post-date_deco">
+      {{ post.createdAt | date :'EEEE dd/MM/yyyy' | titlecase }}
+    </div>
+  </div>
+  <p class="post__para post__para_deco">
+    {{ post.content }}
+  </p>
+  <button type="submit" class="btn-default
+                               btn-green"
+                               (click)="onOpinion('love')">Love it !</button>
+  <button type="submit" class="btn-default
+                               btn-red"
+                               (click)="onOpinion('dontLove')">Don't love it !</button>
+</div>

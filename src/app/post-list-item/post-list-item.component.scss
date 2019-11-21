@@ -1,0 +1,116 @@
+.post {
+  width: 100%;
+  height: auto;
+
+  &-pos {
+    padding: 0 15px 10px 15px;
+    margin-bottom: 2px;
+  }
+
+  &-deco {
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+
+    &_white {
+      background-color: #f3f3f3;
+    }
+
+    &_green {
+      background-color: #ace8ac;
+    }
+
+    &_red {
+      background-color: #fdb3b3;
+    }
+  }
+
+  &__div {
+    width: 100%;
+    height: auto;
+
+    &_pos {
+      padding-top: 10px;
+    }
+
+    &_deco {
+      font-weight: bold;
+    }
+
+    &__post-title {
+      width: 60%;
+
+      &_pos {
+        display: inline-block;
+      }
+
+      &_deco {
+        font-size: 1.5em;
+      }
+    }
+
+    &__post-date {
+      width: 40%;
+      display: inline-block;
+
+      &_pos {
+        text-align: right;
+      }
+
+      &_deco {
+        font-size: 0.8em;
+        font-style: italic;
+      }
+    }
+  }
+
+  &__para {
+    width: 100%;
+
+    &_deco {
+      text-align: justify;
+    }
+  }
+
+}
+
+.opinions {
+  color: black;
+  float: right;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+button {
+  &.btn-default {
+    width: 130px;
+    height: 40px;
+    margin-right: 5px;
+    border-style: none;
+    border-radius: 5px;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &.btn-green {
+    background-color: #28a745;
+
+    &:hover {
+      background-color: #218838;
+    }
+  }
+
+  &.btn-red {
+    background-color: #dc3545;
+
+    &:hover {
+      background-color: #c82333;
+    }
+  }
+}
